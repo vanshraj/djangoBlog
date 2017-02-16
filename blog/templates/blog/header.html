@@ -6,9 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/semantic.min.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Lobster|Rock+Salt|Source+Code+Pro:400" rel="stylesheet">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
 </head>
 <body>
-	<div class="ui pointing menu">
+	<div class="ui fixed stackable menu">
 		<a href="#" class="item">Home</a>
 		<a href="/blog" class="active item">Blog</a>
 		<a href="/about" class="item">About</a>
@@ -24,7 +25,8 @@
 	{% block content %}
 	
 	{% endblock %}
+	
 </body>
-	<script type="text/javascript" src="{% static 'blog/js/jquery-3.1.1.min' %}"></script>
+	<script type="text/javascript" src="{% static 'blog/js/jquery-3.1.1.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'blog/js/semantic.min.js' %}"></script>
 </html>

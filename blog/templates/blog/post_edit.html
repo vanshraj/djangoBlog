@@ -1,0 +1,18 @@
+{% extends "blog/header.html" %}
+
+{% block content %}
+<div class="ui grid centered container">
+	<div class="eight wide column">
+		<h1>New post</h1>
+		<form method="POST" class="ui form">{% csrf_token %}
+		    {{ form.as_p }}
+		    <button type="submit" class="ui orange basic animated button" tabindex="0">
+				<div class="visible content">Save</div>
+				<div class="hidden content">
+					<i class="edit icon"></i>
+				</div>
+			</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

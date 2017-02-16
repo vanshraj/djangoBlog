@@ -2,12 +2,19 @@
 
 {% block content %}
 <div class="ui container">
-	<h1 class="ui horizontal divider header"><a>{{ post.title }}</a></h1><br>
-	<div>
-		<div class="ui raised segment">
-			<p>{{ post.text|linebreaksbr|safe }}</p><br>
-			<p class="publish">published: {{ post.published_date }}</p>
-		</div><br>
+	<h1 class="ui horizontal divider header">{{ post.title }}</h1><br>
+	<div class="ui raised segment">
+		<p>{{ post.text|linebreaksbr|safe }}</p><br>
 	</div>
+	
+		<p class="publish">published: {{ post.published_date }}</p>
+	<a href="{% url 'post_edit' pk=post.pk %}"><div class="ui orange basic animated button" tabindex="0">
+		<div class="visible content">Edit</div>
+			<div class="hidden content">
+				<i class="edit icon"></i>
+			</div>
+		</div>
+	</a>
+	<br><br>
 </div>
 {% endblock %}

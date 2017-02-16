@@ -2,15 +2,40 @@
 
 {% block content %}
 <div class="ui container">
-	<h1 class="ui horizontal divider header"><a href="/blog">The Blog</h1></a><br>
+	<h1 class="ui horizontal divider header"><sup><i class="quote left icon"></i></sup>The Blog <sub><i class="quote right icon"></i></sub></h1><br>
+	<a href="{% url 'post_new' %}"><div class="ui basic orange animated button" tabindex="0">
+		<div class="visible content">Add Blog</div>
+			<div class="hidden content">
+				<i class="plus icon"></i>
+			</div>
+		</div>
+	</a>
+	<br><br>
+	<div class=" ui doubling stackable three column grid">
 	{% for post  in posts %}
-		<div>
+		<div class="column">
 			<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-			<div class="ui raised segment">
+			<div class="ui raised segment" style="min-height:200px">
 				<p>{{ post.text|linebreaksbr|safe|truncatewords:20 }}</p><br>
-				<p class="publish">published: {{ post.published_date }}</p>
-			</div><br>
+				
+			</div>
+			<p class="publish">published: {{ post.published_date }}</p>
+			<a href="{% url 'post_detail' pk=post.pk %}"><div class="ui orange basic animated button" tabindex="0">
+				<div class="visible content">Read More</div>
+					<div class="hidden content">
+						<i class="right arrow icon"></i>
+					</div>
+				</div>
+			</a>
+			<a href="{% url 'post_edit' pk=post.pk %}"><div class="ui orange basic animated button" tabindex="0">
+				<div class="visible content">Edit</div>
+					<div class="hidden content">
+						<i class="edit icon"></i>
+					</div>
+				</div>
+			</a>
 		</div>
 	{% endfor %}
+	</div>
 </div>
 {% endblock %}
