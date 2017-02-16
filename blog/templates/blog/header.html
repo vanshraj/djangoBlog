@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Blog</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/semantic.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Rock+Salt|Source+Code+Pro:400" rel="stylesheet">
+</head>
+<body>
+	<div class="ui pointing menu">
+		<a href="#" class="item">Home</a>
+		<a href="/blog" class="active item">Blog</a>
+		<a href="/about" class="item">About</a>
+		<div class="right menu">
+			<div class="item">
+				<div class="ui transparent icon input">
+					<input type="text" placeholder="Search...">
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	{% block content %}
+	
+	{% endblock %}
+</body>
+	<script type="text/javascript" src="{% static 'blog/js/jquery-3.1.1.min' %}"></script>
+	<script type="text/javascript" src="{% static 'blog/js/semantic.min.js' %}"></script>
+</html>

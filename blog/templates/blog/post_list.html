@@ -1,0 +1,16 @@
+{% extends "blog/header.html" %}
+
+{% block content %}
+<div class="ui container">
+	<h1 class="ui horizontal divider header"><a href="/blog">The Blog</h1></a><br>
+	{% for post  in posts %}
+		<div>
+			<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+			<div class="ui raised segment">
+				<p>{{ post.text|linebreaksbr|safe|truncatewords:20 }}</p><br>
+				<p class="publish">published: {{ post.published_date }}</p>
+			</div><br>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}

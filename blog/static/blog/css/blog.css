@@ -1,0 +1,14 @@
+.ui.menu {
+	font-family: 'Source Code Pro', monospace;
+}
+h1 a {
+    color: #FCA205;
+    font-family: 'Lobster', cursive;
+}
+p{
+	font-family: 'Source Code Pro', monospace;
+}
+.publish {
+	font-weight: bold;
+	font-family: 'Source Code Pro', monospace;
+}
